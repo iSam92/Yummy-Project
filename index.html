@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yummy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-bs-theme="dark" class="position-relative">
+
+
+  <div id="loading" class="justify-content-center align-items-center bg-body">
+  </div>
+
+
+  <section id="home">
+    <div class="container p-5">
+      <div id="data" class="row g-3"></div>
+    </div>
+  </section>
+
+
+  <div class="side-nav position-fixed d-flex">
+    <div class="side-nav-inner p-3 bg-black text-white position-relative">
+      <ul class="list-unstyled mb-0 overflow-hidden">
+        <li id="searchLink" class=" py-2 mb-2">
+          Search
+        </li>
+
+        <li id="categoriesLink" class=" py-2 mb-2">
+          Categories
+        </li>
+
+        <li id="areaLink" class=rounded-2 py-2 mb-2">
+          Area
+        </li>
+
+        <li id="ingredientsLink" class=" py-2">
+          Ingredients
+        </li>
+
+        <li id="contactUs" class="2 py-2">
+          Contact Us
+        </li>
+      </ul>
+
+      <div class="nav-footer position-absolute bottom-0 mb-3">
+        <div class="icons">
+          <i class="fa-brands fa-facebook me-1"></i>
+          <i class="fa-brands fa-x-twitter me-1"></i>
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <div class="footer">
+          <p>Copyright Â© 2019 All Rights <br />Reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="menu" class="bg-white text-black position-relative top-0 bottom-0 d-flex flex-column p-3">
+      <img id="menuLogo" src="logo.png" alt="logo" />
+      <i id="openIcon" class="menuIcon fa-solid fa-bars fa-2x"></i>
+      <i id="closeIcon" class="menuIcon fa-solid fa-xmark fa-2x"></i>
+      <div id="contactIcon" class="text-center fs-5 position-absolute">
+        <i class="fa-solid fa-globe mb-2"></i>
+        <i class="fa-solid fa-share-nodes"></i>
+      </div>
+    </div>
+  </div>
+
+
+  <section id="search" class="bg-black p-5">
+    <div class="container p-4">
+      <div id="searchInputs" class="row g-3">
+        <div id="searchByName" class="col-md-6">
+          <div class="input-container">
+            <input class="form-control" placeholder="Search By Name" id="name" type="text"
+              onkeyup="searchByName(this.value)" />
+          </div>
+        </div>
+
+        <div id="searchByFLetter" class="col-md-6">
+          <div class="input-container">
+            <input class="form-control" placeholder="Search By First Letter" id="fLetter" type="text" maxlength="1"
+              onkeyup="searchByFLetter(this.value)" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="categories" class="overflow-auto bg-black  overflow-auto">
+    <div class="container p-5">
+      <div id="categoriesList" class="row g-3"></div>
+    </div>
+  </section>
+
+
+  <section id="area" class="overflow-auto bg-black overflow-auto">
+    <i id="closeArea" class="fa-solid fa-xmark p-3 rounded-3 shadow text-dark fs-5"></i>
+    <div class="container-lg p-5">
+      <div id="areaList" class="row g-3"></div>
+    </div>
+  </section>
+
+
+  <section id="ingredients" class="overflow-auto bg-black overflow-auto">
+    <div class="container p-5">
+      <div id="ingredientsList" class="row g-4"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-black text-center">
+    <div class="container p-4 w-75 text-center">
+      <form id="contactInputs" class="row g-4">
+        <div class="col-md-6">
+          <div class="input-container">
+            <input placeholder="Enter Your Name" id="uName" type="text" class="form-control" />
+            <span class="input-highlight"></span>
+          </div>
+
+          <div id="nameWarning" class="alert alert-danger">
+            Special characters and numbers not allowed
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="input-container">
+            <input placeholder="Enter Your Email" id="email" type="email" class="form-control" />
+            <span class="input-highlight"></span>
+          </div>
+
+          <div id="emailWarning" class="alert alert-danger">
+            Email not valid *exemple@yyy.zzz
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="input-container">
+            <input placeholder="Enter Your Phone" id="phone" type="tel" class="form-control" />
+            <span class="input-highlight"></span>
+          </div>
+
+          <div id="phoneWarning" class="alert alert-danger">
+            Enter valid Phone Number
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="input-container">
+            <input placeholder="Enter Your Age" id="age" type="number" class="form-control" />
+            <span class="input-highlight"></span>
+          </div>
+
+          <div id="ageWarning" class="alert alert-danger">
+            Enter valid age
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="input-container">
+            <input placeholder="Enter Your Password" id="password" type="password" class="form-control" />
+            <span class="input-highlight"></span>
+          </div>
+
+          <div id="passwordWarning" class="alert alert-danger">
+            Enter valid password *Minimum eight characters, at least one
+            letter and one number:*
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="input-container">
+            <input placeholder="Repeat Your Password" id="rePassword" type="password" class="form-control" />
+            <span class="input-highlight"></span>
+          </div>
+
+          <div id="rePasswordWarning" class="alert alert-danger">
+            Enter valid repassword
+          </div>
+        </div>
+      </form>
+      <button id="submitBtn" class="btn btn-outline-danger px-2 mt-3 disabled">
+        Submit
+      </button>
+    </div>
+  </section>
+
+
+  <section id="mealDetails" class="overflow-auto"></section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+
+  <script src="jquery-3.7.1.min.js"></script>
+
+
+  <script src="index.js"></script>
+
+</body>
+
+</html>

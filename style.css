@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
+.card{
+  background-color: transparent !important;
+  border: none !important;
+}
+body{
+  background-color: black;
+}
+
+
+
+#loading {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+}
+
+
+
+
+.side-nav {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  transition: all 400ms ease;
+}
+
+#menuLogo {
+  margin-top: 8px;
+  width: 40px;
+  height: auto;
+}
+
+#contactIcon {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#openIcon {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  transition: all 300ms ease;
+}
+
+#closeIcon {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  transition: all 300ms ease;
+}
+
+
+.side-nav .side-nav-inner ul li {
+  position: relative;
+  color: inherit;
+  cursor: pointer;
+  padding: 0 3.5rem 0 1rem;
+  transition: all 300ms ease;
+}
+
+
+#home {
+  position: relative;
+  top: 250px;
+}
+
+#home #data .card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+#home #data .card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#home #data .card .overlay {
+  top: 100%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f9f6f6ca;
+  transition: all 0.4s ease;
+}
+
+#home #data .card:hover .overlay {
+  top: 0;
+}
+
+
+#categories {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100vh;
+  z-index: 2;
+}
+
+#categories #categoriesList .card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 100%;
+  transition: all 0.4s ease;
+}
+
+#categories #categoriesList .card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#categories #categoriesList .card .overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f9f6f6ca;
+  transition: all 0.4s ease;
+}
+
+#categories #categoriesList .card:hover .overlay {
+  top: 0;
+}
+
+#categories #categoriesList .card .overlay h4 {
+  color: black;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+}
+
+#categories #categoriesList .card .overlay p {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+  color: black;
+}
+
+#area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  z-index: 2;
+}
+
+#area #areaList .card {
+  position: relative;
+  cursor: pointer;
+
+}
+
+
+
+#ingredients {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100vh;
+  z-index: 2;
+}
+#ingredientsList .item{
+  cursor: pointer;
+}
+
+#ingredients #ingredientsList h4 {
+  font-size: 1.75rem;
+}
+
+
+
+
+
+/* ~<search> */
+
+#search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+}
+
+
+
+#contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+}
+
+
+
+#mealDetails {
+  position: fixed;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  min-height: 100vh;
+}
+
+
